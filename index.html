@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Métodos de pago</title>
+    <style>
+        body {
+            font-family: "Afacad Flux", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: normal;
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row justify-content-center align-items-center min-vh-100 bg-secondary">
+        <div class="col-md-6">
+            <div class="card card-outline-secondary">
+                <div class="card-header d-flex align-items-center justify-content-center bg-light">
+                    <div style="display: flex; align-items: center;">
+                        <h1>Pago con tarjeta</h1>
+                        <i class="fa-regular fa-credit-card" style="font-size: 40px; margin-left: 30px;"></i>
+                    </div>
+                </div>
+
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <div class="alert alert-primary w-100 text-center">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Algunos campos <strong>NO</strong> han sido
+                        rellenados correctamente <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="selectorTarjeta" style="padding: 10px;"><strong>Número de tarjeta</strong></label>
+                        <input class="form-control" id="selectorTarjeta" placeholder="Ejemplo: XXXX-XXXX-XXXX-XXXX"
+                            type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="16">
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="selectorCvc" style="padding: 10px;"><strong>CVC</strong></label>
+                        <input class="form-control" id="selectorCvc" placeholder="Código 3 dígitos parte trasera"
+                            type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 3)"
+                            maxlength="3">
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="selectorCantidad" style="padding: 10px;"><strong>Cantidad a
+                                depositar</strong></label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                            </div>
+                            <input class="form-control" id="selectorDinero" placeholder="€"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6)" maxlength="6"
+                                type="number" min="0">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="selectorNombre" style="padding: 10px;"><strong>Nombre</strong></label>
+                        <input class="form-control" id="selectorNombre" type="text">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="selectorApellidos" style="padding: 10px;"><strong>Apellidos</strong></label>
+                        <input class="form-control" id="selectorApellidos" type="text">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="selectorCiudad" style="padding: 10px;"><strong>Ciudad</strong></label> <input
+                            class="form-control" id="selectorCiudad" type="text">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="selectorPais" style="padding: 10px;"><strong>País</strong></label> <input
+                            class="form-control" id="selectorPais" type="text">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="selectorProvincia" style="padding: 10px;"><strong>Provincia</strong></label> <select
+                            class="form-control custom-select" id="selectorProvincia">
+                            <option class>Selecciona una Provincia
+                            <option value="AL">Álava</option>
+                            <option value="AL">Álava</option>
+                            <option value="AB">Albacete</option>
+                            <option value="A">Alicante</option>
+                            <option value="ALM">Almería</option>
+                            <option value="O">Asturias</option>
+                            <option value="AV">Ávila</option>
+                            <option value="BA">Badajoz</option>
+                            <option value="B">Barcelona</option>
+                            <option value="BU">Burgos</option>
+                            <option value="CC">Cáceres</option>
+                            <option value="CA">Cádiz</option>
+                            <option value="S">Cantabria</option>
+                            <option value="CS">Castellón</option>
+                            <option value="CE">Ceuta</option>
+                            <option value="CR">Ciudad Real</option>
+                            <option value="CO">Córdoba</option>
+                            <option value="CU">Cuenca</option>
+                            <option value="GI">Gerona</option>
+                            <option value="GR">Granada</option>
+                            <option value="GU">Guadalajara</option>
+                            <option value="SS">Gipuzkoa</option>
+                            <option value="HU">Huelva</option>
+                            <option value="HU">Huesca</option>
+                            <option value="IB">Islas Baleares</option>
+                            <option value="J">Jaén</option>
+                            <option value="RI">La Rioja</option>
+                            <option value="GC">Las Palmas</option>
+                            <option value="LE">León</option>
+                            <option value="LO">Lérida</option>
+                            <option value="LU">Lugo</option>
+                            <option value="M">Madrid</option>
+                            <option value="MA">Málaga</option>
+                            <option value="ML">Melilla</option>
+                            <option value="MU">Murcia</option>
+                            <option value="NA">Navarra</option>
+                            <option value="OR">Ourense</option>
+                            <option value="P">Palencia</option>
+                            <option value="PO">Pontevedra</option>
+                            <option value="SA">Salamanca</option>
+                            <option value="TF">Santa Cruz de Tenerife</option>
+                            <option value="SG">Segovia</option>
+                            <option value="SE">Sevilla</option>
+                            <option value="SO">Soria</option>
+                            <option value="T">Tarragona</option>
+                            <option value="TE">Teruel</option>
+                            <option value="TO">Toledo</option>
+                            <option value="V">Valencia</option>
+                            <option value="VA">Valladolid</option>
+                            <option value="BI">Vizcaya</option>
+                            <option value="ZA">Zamora</option>
+                            <option value="Z">Zaragoza</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3 pb-3">
+                        <label for="selectorCp" style="padding: 10px;"><strong>Código postal</strong></label>
+                        <input class="form-control" id="selectorCp" type="text" maxlength="5"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 5);">
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 text-center">
+                            <p for="selectorAceptar" style="padding: 5px;"><strong>Aceptamos:</strong></p>
+                            <div class="btn-group btn-group-lg" data-toggle="buttons">
+                                <label class="btn btn-warning">
+                                    <i class="fa-brands fa-paypal fa-2x"></i>
+                                </label>
+                                <label class="btn btn-warning">
+                                    <i class="fab fa-cc-visa fa-2x"></i>
+                                </label>
+                                <label class="btn btn-warning">
+                                    <i class="fa-solid fa-money-check-dollar fa-2x"></i>
+                                </label>
+                                <label class="btn btn-warning">
+                                    <i class="fa-solid fa-coins fa-2x"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="selectorMensaje" style="padding: 10px;"><strong>Mensaje</strong></label>
+                        <textarea id="selectorMensaje" class="form-control" rows="4"
+                            placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer" style="display: flex; justify-content: center; margin: 20px;">
+                <div class="float-right" style="display: flex; justify-content: center;">
+                    <button id="botonCancelar" class="btn btn-danger" type="button" style="margin-right: 10px;">
+                        <strong>Cancelar</strong> <i class="fa-solid fa-ban" style="margin-right: 10px;"></i>
+                    </button>
+                    <button id="botonEnviar" class="btn btn-success" type="button">
+                        <strong>Enviar</strong> <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
